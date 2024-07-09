@@ -1,0 +1,201 @@
+:root {
+  --primary-color: #050309;
+  --secondary-color: #3e0cc5;
+  --accent-color: hsl(8, 83%, 59%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 120vh;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+/* Utilities */
+/* Used when top-bar is displayed */
+.down36 {
+  transform: translateY(36px);
+}
+/* Used when scrolling down - hiding the top-bar and sub-header */
+.hidden {
+  transform: translateY(-100%);
+}
+
+/* HEADER */
+header {
+  color: #000;
+  background-color: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-height: 70px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Top Bar */
+.top-bar {
+  color: var(--accent-color);
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-height: 36px;
+  position: absolute;
+}
+
+.top-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  filter: brightness(90%);
+  z-index: -1; /* place elements behind the content */
+}
+
+.contact-info {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  color: var(--accent-color);
+  margin-left: 10px;
+  text-decoration: none;
+  opacity: 1.0;
+}
+
+/* Main Header */
+.main-header {
+  color: var(--accent-color);
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--secondary-color); /* fallback color */
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden; /* to ensure the pseudo-element does not overflow */
+}
+
+.main-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  filter: brightness(15%);
+  z-index: -1; /* place the pseudo-element behind the content */
+}
+
+.logo {
+  width: 100px;
+  height: 40px;
+  background-color: var(--accent-color); /* Placeholder for logo */
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* using main-header to select the contact button too */
+.main-header a {
+  color: var(--accent-color);
+  position: relative;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.main-header a::before {
+  color: var(--accent-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.main-header a:hover {
+  background-color: var(--accent-color);
+  /* color: #09021e; */
+}
+
+/* Sub Header */
+.sub-header {
+  padding: 15px 20px;
+  background-color: #f0f0f0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-categories {
+  display: flex;
+  gap: 15px;
+}
+
+.product-category a {
+  color: #000;
+  text-decoration: none;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 3px;
+  z-index: 1;
+  padding: 5px 0;
+}
+.product-category:hover .dropdown-content, .dropdown-content a {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 0px;
+}
+
+
+
+
+
+
+.content {
+  padding: 200px 0 0 0; 
+}
